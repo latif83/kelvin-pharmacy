@@ -8,11 +8,13 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import {RouterModule} from '@angular/router';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

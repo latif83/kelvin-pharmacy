@@ -26,10 +26,10 @@
 
     <div *ngIf="medicines.length > 0" class="drugs container" style="height: 60%; overflow: scroll;">
 
-        <div *ngFor="let medicine of medicines" class="row m-0 bg-light rounded p-3 mt-3">
+        <div *ngFor="let medicine of medicines index as i" class="row m-0 bg-light rounded p-3 mt-3">
 
             <div class="col-3">
-                <img class="img-fluid" src="../../assets/Rectangle 29.png">
+                <img class="img-fluid" [src]="medicine.image">
             </div>
 
             <div class="col-9">
@@ -41,7 +41,7 @@
                         <b> {{medicine.price | currency}} </b>
                     </div>
                     <div class="col-6">
-                        <button class="btn btn-success"> Buy </button>
+                        <button class="btn btn-success" [routerLink]="['/checkout',i]" > Buy </button>
                     </div>
 
                 </div>

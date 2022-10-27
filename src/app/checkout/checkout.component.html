@@ -1,0 +1,57 @@
+<div class="vh-100 main">
+
+    <div class="content bg-light">
+
+        <div class="text-center mt-3">
+            <img class="img-fluid" [src]="medicine.image">
+            <hr>
+        </div>
+
+        <div class="container text-center">
+            <h2> {{medicine.name | titlecase}} </h2>
+            <p> {{medicine.dosage}} </p>
+        </div>
+
+        <div class="container">
+
+        <div class="row text-center">
+
+            <div class="col-6">
+                Item Price
+            </div>
+
+            <div class="col-6">
+                {{medicine.price | currency}}
+            </div>
+
+        </div>
+
+        <div class="row text-center">
+
+            <div class="col-6">
+                Delivery
+            </div>
+
+            <div class="col-6">
+                {{ delivery | currency}}
+            </div>
+
+        </div>
+
+        <div class="row text-center">
+
+            <div class="col-6">
+                Total
+            </div>
+
+            <div class="col-6">
+                {{medicine.price + delivery | currency}}
+            </div>
+
+        </div>
+
+        </div>
+
+    </div>
+
+</div>
