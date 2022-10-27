@@ -42,6 +42,42 @@ export class CheckoutComponent implements OnInit {
 
   }
 
+  firstName:any
+  lastName:any
+  region:any
+  location:any
+  contact:any
+  email:any
+
+  regions = (["Western North Region","Western Region","Volta Region","Greater Accra Region","Eastern Region","Ashanti Region","Central Region","Northern Region","Upper East Region","Upper West Region","Oti Region","Bono East Region","Ahafo Region","Bono Region","North East Region","Savannah Region"]).sort()
+
+  submitted = false
+
+  successMsg = false
+
+  submitOrder(){
+
+    this.submitted = true
+
+    if(!(this.firstName && this.lastName && this.region && this.location && this.contact && this.email)){
+      return
+    }
+
+    let data = {
+      firstName : this.firstName,
+      lastName : this.lastName,
+      region : this.region,
+      location : this.location,
+      contact : this.contact,
+      email : this.email
+    }
+
+    console.log(data)
+
+    this.successMsg = true
+
+  }
+
   constructor( private route : ActivatedRoute ) { }
 
   ngOnInit(): void {
