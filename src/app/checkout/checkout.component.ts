@@ -14,6 +14,34 @@ export class CheckoutComponent implements OnInit {
 
   delivery = 1
 
+  strip = 1
+
+  box = 1
+
+  increase(what:any){
+
+    if(what == "box"){
+      this.box++
+    }
+
+    if(what == "strip"){
+      this.strip++
+    }
+
+  }
+
+  decrease(what:any){
+    
+    if(what == "box"){
+      this.box !==1 && this.box--
+    }
+
+    if(what == "strip"){
+      this.strip!==1 && this.strip--
+    }
+
+  }
+
   constructor( private route : ActivatedRoute ) { }
 
   ngOnInit(): void {

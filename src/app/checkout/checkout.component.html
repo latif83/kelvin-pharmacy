@@ -7,6 +7,55 @@
             <hr>
         </div>
 
+
+
+        <div class="row m-0 px-5 align-items-center">
+
+            <div class="col-1">
+                <input type="radio" name="ch">
+            </div>
+
+            <div class="col-4">
+                Strip
+            </div>
+
+            <div class="col-3">
+                <input class="form-control text-center" [(ngModel)]="strip" name="strip">
+            </div>
+
+            <div class="col-4">
+                <button class="bg-success me-2" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem; outline: 0;" (click)="increase('strip')" > + </button>
+                <button class="bg-danger" style="border-top-right-radius: .5rem; border-bottom-right-radius: .5rem;" (click)="decrease('strip')"> - </button>
+            </div>
+
+        </div>
+
+
+        <div class="row m-0 px-5 mt-3 align-items-center">
+
+            <div class="col-1">
+                <input type="radio" name="ch">
+            </div>
+
+            <div class="col-4">
+                Box
+            </div>
+
+            <div class="col-3">
+                <input class="form-control text-center" name="box" [(ngModel)]="box">
+            </div>
+
+            <div class="col-4">
+                <button class="bg-success me-2" (click)="increase('box')" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem; outline: 0;" > + </button>
+                <button class="bg-danger" (click)="decrease('box')" style="border-top-right-radius: .5rem; border-bottom-right-radius: .5rem;"> - </button>
+            </div>
+
+        </div>
+
+
+
+
+
         <div class="container text-center">
             <h2> {{medicine.name | titlecase}} </h2>
             <p> {{medicine.dosage}} </p>
@@ -14,7 +63,7 @@
 
         <div class="container">
 
-        <div class="row text-center">
+        <div class="row m-0 text-center">
 
             <div class="col-6">
                 Item Price
@@ -51,11 +100,62 @@
         </div>
 
         <div class="mt-3">
-        <button class="btn btn-primary w-100"> Order </button>
+        <button class="btn btn-primary w-100" (click)="orderForm.classList.toggle('d-none')" > Order </button>
         </div>
 
         </div>
 
     </div>
+
+</div>
+
+
+
+
+
+
+
+
+<div #orderForm class=" d-none animate__animated animate__bounceInUp order fixed-top p-3 d-flex align-items-center flex-column justify-content-center " style="min-height: 100vh; width: 100%; backdrop-filter: blur(2px); left: 0%; box-sizing: border-box; background-color: rgba(0, 0, 0, 0.616); "  >
+
+    <i class="fa-solid fa-xmark text-danger fixed-top fa-3x font-weight-bolder " style=" width: max-content; left: 50%; top: 5%; " (click)="orderForm.classList.toggle('d-none')"></i>
+
+   <div class="form-group w-100">
+    <label class="text-light">First Name:</label>
+    <input class="form-control" placeholder="Enter firt name">
+   </div>
+
+   <div class="form-group mt-3 w-100">
+    <label class="text-light">Last Name:</label>
+    <input class="form-control" placeholder="Enter second name">
+   </div>
+
+   <h3 class="text-light mt-3 w-100"> Delivery Address </h3>
+
+   <hr class="w-100" style=" border: 2px solid white; " >
+
+   <div class="form-group mt-3 w-100">
+    <label class="text-light">Region:</label>
+    <input class="form-control" placeholder="select region" >
+   </div>
+
+   <div class="form-group mt-3 w-100">
+    <label class="text-light">Location:</label>
+    <input class="form-control" placeholder="Enter location" >
+   </div>
+
+   <div class="form-group mt-3 w-100">
+    <label class="text-light">Phone Number:</label>
+    <input class="form-control" placeholder="provide your contact">
+   </div>
+
+   <div class="form-group mt-3 w-100">
+    <label class="text-light">Email:</label>
+    <input class="form-control" placeholder="enter email address">
+   </div>
+
+   <div class="form-group mt-3 w-100 text-center">
+    <button class="btn btn-primary"> Submit Order </button>
+   </div>
 
 </div>
