@@ -4,19 +4,23 @@
 
         <div class="input-group m-5 bg-light rounded">
             <div class="input-group-btn bg-light rounded-circle">
-                <button class="btn btn-default" type="submit">
+                <button class="btn btn-default" type="button" (click)="searchMedicine()">
                   <i class="fa-solid fa-search"></i>
                 </button>
               </div>
-          <input type="text" class="form-control" placeholder="Search">
-          
+          <input type="text" name="d" [(ngModel)]="search" class="form-control" placeholder="Search" list="clue">
+
+          <datalist id="clue" style="top: 0%;">
+            <option *ngFor="let clue of searchClue"> {{clue}} </option>
+          </datalist>
+         
         </div>
 
     </div>
 
     <img *ngIf="medicines.length < 1" style="position: absolute; width: 100%; left: 0;" src="../../assets/Man wearing face mask and holding mobile.png">
 
-    <div *ngIf="medicines.length < 1" class="text-center mt-3">
+    <div *ngIf="medicines.length < 1 && searched" class="text-center mt-3">
         <b> "No medicine available for your search" </b>
     </div>
 
@@ -29,7 +33,7 @@
             </div>
 
             <div class="col-9">
-                <h3> {{medicine.name}} </h3> 
+                <h3> {{medicine.name | titlecase }} </h3> 
                 <p> {{medicine.dosage}} </p>
 
                 <div class="row align-items-center m-0 text-center">

@@ -1,30 +1,30 @@
 export const data = [
     {
-    "name" : "Bell Paracetamol",
+    "name" : "bell paracetamol",
     "price" : 5,
     "dosage" : "500 mg",
     "image" : "",
-    "category" : "Pain killer"
+    "category" : "pain killer"
 },
 {
-    "name" : "Emzor Paracetamol",
+    "name" : "emzor paracetamol",
     "price" : 10,
     "dosage" : "500 mg",
     "image" : "",
     "category" : "pain killer"
 },
 {
-    "name" : "Emzor Paracetamol",
+    "name" : "emzor paracetamol",
     "price" : 20,
     "dosage" : "500 mg",
     "image" : "",
     "category" : "pain killer"
 },
 {
-    "name" : "Wormplex 400",
+    "name" : "wormplex 400",
     "price" : 20,
     "dosage" : "500 mg",
     "image" : "",
-    "category" : "Dewormer"
+    "category" : "dewormer"
 }
 ]
