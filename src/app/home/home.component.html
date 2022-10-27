@@ -14,23 +14,27 @@
 
     </div>
 
-    <!-- <img style="position: absolute; width: 100%; left: 0;" src="../../assets/Man wearing face mask and holding mobile.png"> -->
+    <img *ngIf="medicines.length < 1" style="position: absolute; width: 100%; left: 0;" src="../../assets/Man wearing face mask and holding mobile.png">
 
-    <div class="drugs container" style="height: 60%; overflow: scroll;">
+    <div *ngIf="medicines.length < 1" class="text-center mt-3">
+        <b> "No medicine available for your search" </b>
+    </div>
 
-        <div class="row m-0 bg-light rounded p-3 mt-3">
+    <div *ngIf="medicines.length > 0" class="drugs container" style="height: 60%; overflow: scroll;">
+
+        <div *ngFor="let medicine of medicines" class="row m-0 bg-light rounded p-3 mt-3">
 
             <div class="col-3">
                 <img class="img-fluid" src="../../assets/Rectangle 29.png">
             </div>
 
             <div class="col-9">
-                <h3> Bell paracetamol </h3> 
-                <p> 500mg </p>
+                <h3> {{medicine.name}} </h3> 
+                <p> {{medicine.dosage}} </p>
 
                 <div class="row align-items-center m-0 text-center">
                     <div class="col-6 font-weight-bolder">
-                        <b> GHS 5.00 </b>
+                        <b> {{medicine.price | currency}} </b>
                     </div>
                     <div class="col-6">
                         <button class="btn btn-success"> Buy </button>
