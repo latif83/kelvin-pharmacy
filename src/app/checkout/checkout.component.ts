@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { data } from '../pharm';
 
@@ -76,9 +76,14 @@ export class CheckoutComponent implements OnInit {
 
     this.successMsg = true
 
+    setTimeout(() => {
+      this.successMsg = false
+      this.router.navigate(['/'])
+    }, 5000);
+
   }
 
-  constructor( private route : ActivatedRoute ) { }
+  constructor( private route : ActivatedRoute, private router : Router ) { }
 
   ngOnInit(): void {
 
