@@ -2,8 +2,8 @@
 
     <div class="content bg-light">
 
-        <div class="text-center mt-3">
-            <img class="img-fluid" [src]="medicine.image">
+        <div class="text-center mt-3 mx-3">
+            <img class="img-fluid w-100" [src]="medicine.image">
             <hr>
         </div>
 
@@ -48,6 +48,10 @@
                 {{medicine.price + delivery | currency}}
             </div>
 
+        </div>
+
+        <div class="mt-3">
+        <button class="btn btn-primary w-100"> Order </button>
         </div>
 
         </div>
