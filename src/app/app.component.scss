@@ -1,0 +1,12 @@
+#app{
+    display: none !important;
+}
+
+@media(max-width : 400px){
+    #desktop{
+        display: none !important;
+    }
+    #app{
+        display: block !important;
+    }
+}
